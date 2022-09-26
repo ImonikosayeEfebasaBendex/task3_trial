@@ -37,4 +37,15 @@ module.exports = class UserController {
             res.send("error");
         }
     }
+
+    async DeleteUserById(req, res, next) {
+        const id = req.query.id
+        const result = await userService.DeleteUserById(id);
+
+        if (result) {
+            res.send(result);
+        } else {
+            res.send("error");
+        }
+    }
 }

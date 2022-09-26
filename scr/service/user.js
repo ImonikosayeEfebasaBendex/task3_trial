@@ -15,4 +15,8 @@ module.exports = class UserService {
         return await UserModel.findOne({ firstName: "efe" })
     }
 
+    async DeleteUserById(id) {
+        return await UserModel.findOneAndDelete(id)
+    }
+
 }
